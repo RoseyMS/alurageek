@@ -1,0 +1,34 @@
+.products__container{
+    width: 100%;
+}
+
+
+.product__line__container{
+    display: flex;
+    flex-direction: column;
+
+    
+}
+.product__line__header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1rem;
+}
+.product__line__products{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.product__line__products__details{
+    margin: 0.5rem;
+}
+.product__line__products__details__product-img{
+    width: 156px;
+    height: 174px;
+}
+.product__line__products__details__product-btn{
+    color:  #2A7AE4;
+    font-weight: 500;
+}

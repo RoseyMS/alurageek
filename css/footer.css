@@ -1,0 +1,11 @@
+.footer__container{
+    display: flex;
+    padding: 1rem ;
+    background: #FFFFFF;
+   justify-content: space-evenly;
+   
+}
+.footer__container p{
+    width: 80%;
+    text-align: center;
+}

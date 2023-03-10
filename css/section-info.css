@@ -1,0 +1,46 @@
+.info__container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.info__container__left{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
+}
+.info__container__left__img{
+    width: 40%;
+}
+.info__container__left__list{
+    text-align: center;
+}
+.info__container__left__list__item{
+    margin-bottom: 0.5rem;
+}
+.info__container__left__list__item:hover{
+    font-size: 18px;
+    transition: 0.5s;
+    font-weight: bold;
+}
+.info__container__contact__title{
+    font-weight: bold;
+    margin: 1rem 1rem 0.5rem 1rem;
+}
+
+.info__container__contact__nombre, .info__container__contact__mensaje{
+    margin: 0.5rem 1rem;
+    padding: 0.5rem;
+    width: 85%;
+}
+.info__container__contact__button{
+    background-color: #2A7AE4;
+    width: 40%;
+    color: #FFFFFF;
+    height: 2rem;
+    font-size: 14px;
+    margin-left: 1rem;
+}
