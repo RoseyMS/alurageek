@@ -9,14 +9,14 @@
     background: #F5F5F5;
 }
 .login__title{
-    margin: 1rem;
+    margin: 1rem 0;
     font-weight: bold;
     font-size: 22px;
 }
 .login__form{
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 100%;
     align-items: center;
     font-size: 16px;
 }
@@ -29,4 +29,10 @@
     background: #2A7AE4;
     width: 40%;
     color: #FFFFFF;
+}
+
+@media screen and (min-width:768px){
+    .login__form{
+        width: 40%;   
+    }
 }

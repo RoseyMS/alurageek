@@ -1,8 +1,9 @@
 .footer__container{
     display: flex;
-    padding: 1rem ;
+    padding: 1rem 0;
     background: #FFFFFF;
-   justify-content: space-evenly;
+   justify-content: space-around;
+   width: 100%;
    
 }
 .footer__container p{

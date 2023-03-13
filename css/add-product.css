@@ -1,8 +1,8 @@
 .new__product__container{
     display: flex;
     flex-direction: column;
-    width: 100%;
-    align-items: center;
+    width: 100% ;
+
 
 }
 .new__product__title{
@@ -10,17 +10,20 @@
     font-weight: bold;
     align-self: flex-start;
     margin-top: 1rem;
+    margin-bottom: 0.5rem;
     margin-left: 1rem;
 }
 .new__product__form{
     display: flex;
     flex-direction: column;
-    margin: 1rem 0;
-    width: 90%;
+    margin-bottom: 1rem;
+    width: 95%;
+    padding-left: 1rem;
 }
 .new__product__form input, .new__product__add__btn{
-    margin: 0.5rem;
+    margin: 0.5rem 0;
     height: 3rem;
+    
 }
 .new__product__img{
     background: #FFFFFF;
