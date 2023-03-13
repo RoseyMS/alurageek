@@ -1,0 +1,32 @@
+.new__product__container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+
+}
+.new__product__title{
+    font-size: 22px;
+    font-weight: bold;
+    align-self: flex-start;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+.new__product__form{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+    width: 90%;
+}
+.new__product__form input, .new__product__add__btn{
+    margin: 0.5rem;
+    height: 3rem;
+}
+.new__product__img{
+    background: #FFFFFF;
+    font-size: 16px;
+}
+.new__product__add__btn{
+    background: #2A7AE4;
+    color: #FFFFFF;
+}

@@ -1,0 +1,28 @@
+.product__details{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.product__name, .product__price, .product__description{
+    margin: 0.3rem 1rem
+}
+
+.product__name{
+    font-size: 22px;
+    font-weight: 500;
+    
+}
+.product__price{
+    font-weight: bold;
+}
+.product__related{
+    background: #FFFFFF;
+}
+.product__related__title{
+    font-size: 22px;
+    margin-left: 1rem;
+    padding-top: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}

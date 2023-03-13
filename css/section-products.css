@@ -45,3 +45,22 @@ fa-arrow-right:before {
     color:  #2A7AE4;
     font-weight: 500;
 }
+
+.product__line__all__products{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 1rem;
+}
+.product__line__all__products__title{
+    font-size: 22px;
+    font-weight: bold;
+    margin: 2rem 0 1rem 0;
+    
+}
+.product__line__all__products__btn{
+    background: #2A7AE4;
+    color: #FFFFFF;
+    width: 40%;
+    height: 2rem;
+}

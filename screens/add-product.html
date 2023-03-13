@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AluraGeek - Login</title>
+    <title>AluraGeek - Agregar producto</title>
     <!-- links -->
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="css/section-info.css">
-    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/section-info.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/add-product.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Montserrat:wght@300;400;700&family=Open+Sans:wght@300;400;700&family=Raleway:wght@300;400;500;700&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Montserrat:wght@300;400;700&family=Open+Sans:wght@300;400;700&family=Raleway:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    
 </head>
-
 <body>
     <header class="header__container">
         <div class="header__container__logo">
-            <img class="header__logo" src="/img/Logo.png" alt="Logotipo AluraGeek">
+            <img class="header__logo" src="../img/Logo.png" alt="Logotipo AluraGeek">
+        </div>
+
+        <div class="header__container__login">
+            <button><a href="">Login</a></button>
         </div>
 
         <div class="header__container__search">
@@ -36,18 +37,22 @@
         </div>
     </header>
     <main>
-        <section class="login__container">
-            <h2 class="login__title">Iniciar sesión</h2>
-            <form class="login__form" action="submit">
-                <input class="login__form__email" type="email" placeholder="Escriba su correo electrónico" required>
-                <input class="login__form__password" type="password" placeholder="Escriba su contraseña" required>
-                <button class="login__form__btn">Entrar</button>
-            </form>
 
-        </section>
+        <div class="new__product__container">
+            <h1 class="new__product__title" >Agregar nuevo producto</h1>
+            <form class="new__product__form" action="submit">
+                <input class="new__product__image__url" type="text" placeholder="URL de la imagen" required>
+                <input class= "new__product__category" type="text" placeholder="Categoría" required>
+                <input class="new__product__name"type="text" placeholder="Nombre del producto" required>
+                <input class="new__product__price" type="text" placeholder="Precio del producto" required>
+                <input class="new__product__description"  type="text" placeholder="Descripcion del producto" required>
+                <button class="new__product__add__btn">Agregar producto</button>
+                
+            </form>
+        </div>
         <section class="info__container">
             <div class="info__container__left">
-                <img class="info__container__left__img" src="img/Logo-2.png" alt="">
+                <img class="info__container__left__img" src="../img/Logo-2.png" alt="">
                 <ul class="info__container__left__list">
                     <li class="info__container__left__list__item">
                         <a href="">Quienes somos</a>
@@ -73,8 +78,7 @@
                 <h2 class="info__container__contact__title">Hable con nosotros</h2>
                 <form class="info__container__contact__form">
                     <input class="info__container__contact__nombre" type="text" placeholder="Nombre" required>
-                    <textarea class="info__container__contact__mensaje" cols="30" rows="4" placeholder="Mensaje"
-                        required></textarea>
+                    <textarea class="info__container__contact__mensaje" cols="30" rows="4" placeholder="Mensaje" required></textarea>
                     <button class="info__container__contact__button">Enviar mensaje</button>
                 </form>
             </div>
@@ -83,7 +87,5 @@
     <footer class="footer__container">
         <p>Desarrollado por Rosey Morera - 2023</p>
     </footer>
-
-</body>
-
+    </body>
 </html>
