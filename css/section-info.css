@@ -23,7 +23,7 @@
 }
 
 .info__container__left__list__item {
-    padding-bottom: 0.5rem;
+    padding-bottom: 1rem;
 }
 
 .info__container__left__list__item:hover {
@@ -71,5 +71,25 @@
     }
     .info__container__contact{
         width: 70%;
+    }
+}
+
+@media screen and (min-width:1024px){
+    .info__container{
+        justify-content: space-between;
+       font-size: 18px;
+       margin-top: 1rem;
+    }
+    .info__container__left {
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 40%;
+    }
+
+    .info__container__contact{
+        width: 60%;
+    }
+    .info__container__contact__button {
+        font-size: 18px;
     }
 }

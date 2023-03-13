@@ -30,7 +30,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 .product__line__products__details{
     margin: 0.5rem;
@@ -78,4 +78,25 @@
     color: #FFFFFF;
     width: 40%;
     height: 2rem;
+}
+
+
+@media screen and (min-width:1024px){
+    .product__line__products{
+        flex-wrap: nowrap;
+    }
+    .product__line__all__products{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 2rem;
+        
+    }
+    .product__line__all__products__title{
+        margin: 0 0 0 1rem;
+    }
+    .product__line__all__products__btn{
+        width: 20%;
+        margin-right: 1rem;
+    }
 }
