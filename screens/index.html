@@ -14,8 +14,10 @@
     <link rel="stylesheet" href="../css/section-info.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Montserrat:wght@300;400;700&family=Open+Sans:wght@300;400;700&family=Raleway:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Montserrat:wght@300;400;700&family=Open+Sans:wght@300;400;700&family=Raleway:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
 </head>
 
 <body>
@@ -43,15 +45,15 @@
             <div class="banner__text__container">
                 <h2>Marzo Promocional</h2>
                 <p>Productos seleccionados con 33% de descuento</p>
-                <button class="banner__text__button">Ver consolas</button>
+                <button class="banner__text__button"><a href="#consolas">Ver consolas </a></button>
             </div>
         </section>
-        
+
         <section class="products__container">
             <div class="product__line__container">
                 <div class="product__line__header">
-                    <h3>Star Wars</h3>
-                   <button>Ver todo <i class="fa fa-arrow-right"></i></button>
+                    <h3 id="star-wars">Star Wars</h3>
+                    <button>Ver todo <i class="fa fa-arrow-right"></i></button>
                 </div>
                 <div class="product__line__products">
                     <div class="product__line__products__details">
@@ -90,12 +92,12 @@
                         <h2 class="product__line__products__details__product-price">$60,00</h2>
                         <a class="product__line__products__details__product-btn" href="">Ver producto</a>
                     </div>
-                </div>                
+                </div>
             </div>
             <div class="product__line__container">
                 <div class="product__line__header">
-                    <h3>Consolas</h3>
-                   <button>Ver todo <i class="fa fa-arrow-right"></i></button>
+                    <h3 id="consolas">Consolas</h3>
+                    <button>Ver todo <i class="fa fa-arrow-right"></i></button>
                 </div>
                 <div class="product__line__products">
                     <div class="product__line__products__details">
@@ -134,12 +136,12 @@
                         <h2 class="product__line__products__details__product-price">$60,00</h2>
                         <a class="product__line__products__details__product-btn" href="">Ver producto</a>
                     </div>
-                </div>                
+                </div>
             </div>
             <div class="product__line__container">
                 <div class="product__line__header">
-                    <h3>Diversos</h3>
-                   <button>Ver todo <i class="fa fa-arrow-right"></i></button>
+                    <h3 id="diversos">Diversos</h3>
+                    <button>Ver todo <i class="fa fa-arrow-right"></i></button>
                 </div>
                 <div class="product__line__products">
                     <div class="product__line__products__details">
@@ -179,7 +181,7 @@
                         <a class="product__line__products__details__product-btn" href="">Ver producto</a>
                     </div>
                 </div>
-                
+
             </div>
         </section>
         <section class="info__container">
@@ -208,9 +210,17 @@
             </div>
             <div class="info__container__contact">
                 <h2 class="info__container__contact__title">Hable con nosotros</h2>
-                <form class="info__container__contact__form">
-                    <input class="info__container__contact__nombre" type="text" placeholder="Nombre" required>
-                    <textarea class="info__container__contact__mensaje" cols="30" rows="4" placeholder="Mensaje" required></textarea>
+                <form class="info__container__contact__form" id="contactform">
+                    <div class="element-container">
+                        <input class="info__container__contact__name" type="text" placeholder="Nombre" required
+                            pattern="^[\s\S]{0,40}$" data-tipo="name">
+                        <span class="element-message-error"></span>
+                    </div>
+                    <div class="element-container">
+                        <textarea class="info__container__contact__message" cols="30" rows="4" placeholder="Mensaje"
+                            required data-tipo="message" maxlength="120"></textarea>
+                        <span class="element-message-error"></span>
+                    </div>
                     <button class="info__container__contact__button">Enviar mensaje</button>
                 </form>
             </div>
@@ -219,7 +229,8 @@
     <footer class="footer__container">
         <p>Desarrollado por Rosey Morera - 2023</p>
     </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="../js/validaciones.js"></script>
 </body>
 
 </html>

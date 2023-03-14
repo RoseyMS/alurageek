@@ -112,12 +112,20 @@
                     </li>
                 </ul>
             </div>
-            <div class="info__container__contact">
+             <div class="info__container__contact">
                 <h2 class="info__container__contact__title">Hable con nosotros</h2>
                 <form class="info__container__contact__form">
-                    <input class="info__container__contact__nombre" type="text" placeholder="Nombre" required>
-                    <textarea class="info__container__contact__mensaje" cols="30" rows="4" placeholder="Mensaje"
-                        required></textarea>
+                    <div class="element-container">
+                        <input class="info__container__contact__name" type="text" placeholder="Nombre" required
+                            pattern="^[\s\S]{0,40}$" data-name>
+                        <span class="element-message-error"></span>
+                    </div>
+                    <div class="element-container">
+                        <textarea class="info__container__contact__message" cols="30" rows="4" placeholder="Mensaje"
+                            required maxlength="120" data-message>
+                        </textarea>
+                        <span class="element-message-error"></span>
+                    </div>
                     <button class="info__container__contact__button">Enviar mensaje</button>
                 </form>
             </div>
