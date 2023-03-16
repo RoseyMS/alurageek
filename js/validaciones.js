@@ -1,9 +1,12 @@
 
 
-const boton = document.querySelector(".info__container__contact__button");
-const elements = document.querySelectorAll(".info__container__contact__name, .info__container__contact__message");
-const form = document.getElementById("contactform");
+const sendButton = document.querySelector(".info__container__contact__button");
+const loginButton = document.querySelector(".login__form__btn");
+const addProductButton = document.querySelector(".new__product__add__btn");
 
+const elements = document.querySelectorAll("input, textArea, select");
+const form = document.getElementById("contactform");
+const image = document.querySelector(".new__product__image__url");
 
 
 elements.forEach(element => {
@@ -11,8 +14,9 @@ elements.forEach(element => {
         valida(element.target);
     });
 });
-boton.addEventListener("click", (event) => {
+sendButton.addEventListener("click", (event) => {
     event.preventDefault();
+
     Swal.fire({
         icon: 'success',
         title: 'Su mensaje ha sido enviado',
@@ -45,11 +49,36 @@ const tipoErrores = [
 
 const mensajesDeError = {
     name: {
-        valueMissing: "El campo nombre no puede estar vacio",
+        valueMissing: "El campo nombre no puede estar vacío",
         patternMismatch: "Debe contener máximo 40 caracteres"
     },
+    image:{
+        valueMissing: "El campo imagen no puede estar vacío",
+    },
+    category:{
+        valueMissing: "El campo categoría no puede estar vacío",
+    },
+    product:{
+        valueMissing: "El campo nombre del producto no puede estar vacío",
+        patternMismatch: "Debe contener máximo 20 caracteres"
+    },
+    price:{
+        valueMissing: "El campo precio del producto no puede estar vacío",
+    },
+    description:{
+        valueMissing: "El campo descripción no puede estar vacío",
+        patternMismatch: "Debe contener máximo 150 caracteres"
+    },
+    email: {
+        valueMissing: "El campo correo no puede estar vacío",
+        typeMismatch: "El correo no es valido"
+    },
+    password: {
+        valueMissing: "El campo contraseña no puede estar vacío",
+        patternMismatch: "Al menos 6 caracteres, máximo 12, debe contener al menos una letra minúscula, un número y no puede contener caracteres especiales."
+    },
     message: {
-        valueMissing: "El campo mensaje no puede estar vacio"
+        valueMissing: "El campo mensaje no puede estar vacío"
     },
 
 }
@@ -59,7 +88,6 @@ function mostrarMensajeDeError(tipoDeInput, input) {
     tipoErrores.forEach(error => {
        
         if (input.validity[error]) {
-            console.log([tipoDeInput][error]);
             mensaje = mensajesDeError[tipoDeInput][error];
         }
     });

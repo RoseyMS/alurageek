@@ -27,7 +27,6 @@
 }
 
 .info__container__left__list__item:hover {
-    font-size: 18px;
     transition: 0.5s;
     font-weight: bold;
 }
@@ -54,6 +53,15 @@
     font-size: 14px;
 }
 
+.element-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.new__product__form .element-container{
+    width: 100%;
+}
 
 .element-container--invalid {
     margin-bottom: 0.5rem;
@@ -72,6 +80,7 @@
 .element-container--invalid .element-message-error {
     color: #424242;
     display: block;
+    
 }
 
 @media screen and (min-width:768px) {
@@ -93,6 +102,13 @@
         width: 70%;
     }
 
+    .element-container{
+        width: 60%;
+    }
+
+    .new__product__form .element-container{
+        width: 100%;
+    }
     
 }
 

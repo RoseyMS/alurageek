@@ -19,6 +19,7 @@
     width: 100%;
     align-items: center;
     font-size: 16px;
+
 }
 .login__form__email, .login__form__password, .login__form__btn{
     margin: 0.5rem 0;
@@ -31,8 +32,10 @@
     color: #FFFFFF;
 }
 
+
 @media screen and (min-width:768px){
     .login__form{
-        width: 40%;   
+        width: 70%;   
     }
+    
 }

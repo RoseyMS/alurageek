@@ -2,6 +2,7 @@
     width: 100%;
     background: #F5F5F5;
     padding-bottom: 2rem;
+    
 }
 
 
@@ -82,9 +83,7 @@
 
 
 @media screen and (min-width:1024px){
-    .product__line__products{
-        flex-wrap: nowrap;
-    }
+    
     .product__line__all__products{
         flex-direction: row;
         justify-content: space-between;

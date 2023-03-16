@@ -41,6 +41,7 @@
             <div class="product__details__container">
                 <img class="product__img" src="../img/star-wars-1.jpg" alt="">
                <div class="product__details">
+                <label class="product__category"></label>
                 <h2 class="product__name">Producto XYZ</h2>
                 <h2 class="product__price">$60.00</h2>
                 <p class="product__description">Voluptas voluptatum quibusdam similique, class debitis alias maecenas
@@ -60,30 +61,7 @@
                         <h2 class="product__line__products__details__product-price">$60,00</h2>
                         <a class="product__line__products__details__product-btn" href="">Ver producto</a>
                     </div>
-                    <div class="product__line__products__details">
-                        <img class="product__line__products__details__product-img" src="../img/star-wars-3.jpg" alt="">
-                        <h2 class="product__line__products__details__product-name">Producto XYZ</h2>
-                        <h2 class="product__line__products__details__product-price">$60,00</h2>
-                        <a class="product__line__products__details__product-btn" href="">Ver producto</a>
-                    </div>
-                    <div class="product__line__products__details">
-                        <img class="product__line__products__details__product-img" src="../img/star-wars-4.jpg" alt="">
-                        <h2 class="product__line__products__details__product-name">Producto XYZ</h2>
-                        <h2 class="product__line__products__details__product-price">$60,00</h2>
-                        <a class="product__line__products__details__product-btn" href="">Ver producto</a>
-                    </div>
-                    <div class="product__line__products__details">
-                        <img class="product__line__products__details__product-img" src="../img/star-wars-5.jpg" alt="">
-                        <h2 class="product__line__products__details__product-name">Producto XYZ</h2>
-                        <h2 class="product__line__products__details__product-price">$60,00</h2>
-                        <a class="product__line__products__details__product-btn" href="">Ver producto</a>
-                    </div>
-                    <div class="product__line__products__details">
-                        <img class="product__line__products__details__product-img" src="../img/star-wars-6.jpg" alt="">
-                        <h2 class="product__line__products__details__product-name">Producto XYZ</h2>
-                        <h2 class="product__line__products__details__product-price">$60,00</h2>
-                        <a class="product__line__products__details__product-btn" href="">Ver producto</a>
-                    </div>
+                    
                 </div>
             </div>
 
@@ -114,16 +92,15 @@
             </div>
              <div class="info__container__contact">
                 <h2 class="info__container__contact__title">Hable con nosotros</h2>
-                <form class="info__container__contact__form">
+                <form class="info__container__contact__form" id="contactform">
                     <div class="element-container">
                         <input class="info__container__contact__name" type="text" placeholder="Nombre" required
-                            pattern="^[\s\S]{0,40}$" data-name>
+                            pattern="^[\s\S]{0,40}$" data-tipo="name">
                         <span class="element-message-error"></span>
                     </div>
                     <div class="element-container">
                         <textarea class="info__container__contact__message" cols="30" rows="4" placeholder="Mensaje"
-                            required maxlength="120" data-message>
-                        </textarea>
+                            required data-tipo="message" maxlength="120"></textarea>
                         <span class="element-message-error"></span>
                     </div>
                     <button class="info__container__contact__button">Enviar mensaje</button>
@@ -134,6 +111,8 @@
     <footer class="footer__container">
         <p>Desarrollado por Rosey Morera - 2023</p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="../js/validaciones.js"></script>
 </body>
 
 </html>
