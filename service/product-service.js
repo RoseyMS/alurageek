@@ -1,3 +1,4 @@
+
 const productsList = () =>
     fetch("http://localhost:3005/product").then((respuesta) => respuesta.json());
 const addProduct = (image, category, name,  price, description) => {
@@ -35,7 +36,7 @@ const editProduct = (image, category, name,  price, description, id) => {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({ image, category, name,  price, description })
-    }).then(respuesta => respuesta).catch((err) => console.log("ha ocurrido un error"))
+    }).then(respuesta => respuesta).catch((err) => console.error("ha ocurrido un error"))
 }
 export const productServices = {
     productsList,

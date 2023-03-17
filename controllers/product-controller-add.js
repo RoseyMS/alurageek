@@ -12,17 +12,17 @@ form.addEventListener("submit", (evento) => {
    
     
     fileReader.addEventListener("load", (event) => {
+        
         const imageData = event.target.result;
         const category = document.querySelector("[data-category]").value;
         const name = document.querySelector("[data-name]").value;
         const price = document.querySelector("[data-price]").value;
         const description = document.querySelector("[data-description]").value;
         productServices.addProduct(imageData, category, name, price, description).then(() => {
-            Swal.fire('Producto agregado exitosamente')
+        }).catch(err => console.error(err));
 
-        }).catch(err => console.log(err));
     });
     fileReader.readAsDataURL(image.files[0]);
 
-
+    alert("Producto agregado");
 });

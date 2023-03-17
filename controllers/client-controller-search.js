@@ -16,10 +16,14 @@ form.addEventListener("submit", (evento) => {
                 return;
             }
         });
-        if(userFound){
-            console.log("User found");
-        }else{
-            console.log("Me lleva");
+        if (userFound) {
+            window.location.href = "/screens/index.html";
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Correo y/o contraseña incorrecta!'
+            })
         }
     }).catch((error) => console.error("Ocurrio un error", error));
     form.reset();

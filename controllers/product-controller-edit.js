@@ -2,12 +2,23 @@ import { productServices } from "../service/product-service.js";
 
 const formulario = document.querySelector("[data-form]");
 
+async function dataUrlToFile(dataUrl, fileName) {
+    const res = await fetch(dataUrl);
+    const blob = await res.blob();
+    return new File([blob], fileName, { type: 'image/png' });
+}
+
 const getInformation = async () => {
     const url = new URL(window.location);
     const id = url.searchParams.get("id");
 
     if (id == null) {
-        window.location.href = "/screens/error.html";
+        console.error("Ha ocurrido un error");
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Ha ocurrido un problema!'
+        })
     }
 
     const image = document.querySelector("[data-image]");
@@ -20,7 +31,6 @@ const getInformation = async () => {
         if (product.image && product.category
             && product.name && product.price
             && product.description) {
-            image.value = product.image;
             category.value = product.category;
             name.value = product.name;
             price.value = product.price;
@@ -28,15 +38,27 @@ const getInformation = async () => {
         } else {
             throw new Error();
         }
+        
+        dataUrlToFile(product.image, "imagen.png").then((imageFile) => {
+            const dataTransfer = new DataTransfer();
+            dataTransfer.items.add(imageFile);
+            image.files = dataTransfer.files;
+            document.getElementById("new__product__image__preview").src = URL.createObjectURL(image.files[0]);
+        }).catch((error) => console.error("Ha ocurrido un error", error));
 
     } catch (error) {
-        window.location.href = "/screens/error.html";
-
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Ha ocurrido un problema!'
+        })
+        console.error("Ha ocurrido un error", error);
     }
 
 }
 
 getInformation();
+
 
 formulario.addEventListener("submit", (evento) => {
     evento.preventDefault();
@@ -48,6 +70,6 @@ formulario.addEventListener("submit", (evento) => {
     const price = document.querySelector("[data-price]").value;
     const description = document.querySelector("[data-description]").value;
     productServices.editProduct(image, category, productName, price, description).then(() => {
-        window.location.href = "/screens/edicion_concluida.html";
+        alert("Edicion completada");
     });
 });

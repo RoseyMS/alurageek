@@ -1,3 +1,4 @@
+
 const clientsList = () =>
     fetch("http://localhost:3006/client").then((respuesta) => respuesta.json());
 
@@ -33,7 +34,7 @@ const editClient = (email,password, id) => {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({email, password})
-    }).then(respuesta => respuesta).catch((err) => console.log("ha ocurrido un error"))
+    }).then(respuesta => respuesta).catch((err) => console.error("ha ocurrido un error"))
 }
 export const clientServices = {
     clientsList,
