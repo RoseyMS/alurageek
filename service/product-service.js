@@ -28,6 +28,11 @@ const productDetails = (id) => {
         respuesta.json()
     );
 }
+const searchProducts = (name) => {
+    return fetch(`http://localhost:3005/product?q=${name}`).then(respuesta =>
+        respuesta.json()
+    );
+}
 
 const editProduct = (image, category, name,  price, description, id) => {
     return fetch(`http://localhost:3005/product/${id}`, {
@@ -44,4 +49,5 @@ export const productServices = {
     deleteProduct,
     productDetails,
     editProduct,
+    searchProducts
 };

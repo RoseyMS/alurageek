@@ -44,8 +44,8 @@ const getInformation = async () => {
             dataTransfer.items.add(imageFile);
             image.files = dataTransfer.files;
             document.getElementById("new__product__image__preview").src = URL.createObjectURL(image.files[0]);
-        }).catch((error) => console.error("Ha ocurrido un error", error));
-
+        })
+        
     } catch (error) {
         Swal.fire({
             icon: 'error',

@@ -1,16 +1,20 @@
 import { productServices } from "../service/product-service.js";
 
+export const createNewLine = (image, category, name, price, description, id) => {
 
-
-const createNewLine = (image, category, name, price, description, id) => {
-   
     const line = document.createElement("div");
-    const content =
+    let content =
         `
         <div class = "product__line__products__details">
-            <img class="product__line__products__details__product-img" src="${image}" alt="">
-            <button type = "button" class="product__line__products__details__delete-btn" id= ${id}><i class="fa fa-trash" aria-hidden="true"></i></button>
-            <button class="product__line__products__details__edit-btn"><a href="../screens/edit-product.html?id=${id}"><i class='fas fa-pen'></i></a></button>
+            <img class="product__line__products__details__product-img" src="${image}" alt="">`;
+
+    const url = window.location.href;
+    if (url.includes("products")) {
+        content += `<button type = "button" class="product__line__products__details__delete-btn" id= ${id}><i class="fa fa-trash" aria-hidden="true"></i></button>
+                <button class="product__line__products__details__edit-btn"><a href="../screens/edit-product.html?id=${id}"><i class='fas fa-pen'></i></a></button>`;
+    }
+
+    content += `
             <label class="product__line__products__details__product__category" id="${category}"></label>
             <h2 class="product__line__products__details__product-name">${name}</h2>
             <h2 class="product__line__products__details__product-price">$${price}</h2>
@@ -20,14 +24,14 @@ const createNewLine = (image, category, name, price, description, id) => {
     line.innerHTML = content;
     line.dataset.id = id;
     const btnDelete = document.querySelector(".product__line__products__details__delete-btn");
-    if(btnDelete){
+    if (btnDelete) {
         btnDelete.addEventListener("click", () => {
             const id = btnDelete.id;
             productServices.deleteProduct(id).then(respuesta => {
             }).catch((error) => console.error("Ocurrio un error"));
         });
     }
-    
+
     return line;
 };
 const product = document.querySelector("[data-products]");
@@ -37,7 +41,7 @@ const productTypeDiversos = document.querySelector("[data-product3]");
 
 productServices.productsList().then((data) => {
     data.forEach(({ image, category, name, price, description, id }) => {
-        const newLine = createNewLine(image, category, name,price, description, id);
+        const newLine = createNewLine(image, category, name, price, description, id);
 
         const url = window.location.href;
         if (url.includes("products")) {

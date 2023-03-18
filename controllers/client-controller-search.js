@@ -18,6 +18,7 @@ form.addEventListener("submit", (evento) => {
         });
         if (userFound) {
             window.location.href = "/screens/index.html";
+            
         } else {
             Swal.fire({
                 icon: 'error',

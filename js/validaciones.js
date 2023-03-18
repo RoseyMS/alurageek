@@ -8,12 +8,14 @@ const elements = document.querySelectorAll("input, textArea, select");
 const form = document.getElementById("contactform");
 const image = document.querySelector(".new__product__image__url");
 
-
-elements.forEach(element => {
-    element.addEventListener("blur", (element) => {
-        valida(element.target);
+if (elements != null) {
+    elements.forEach(element => {
+        element.addEventListener("blur", (element) => {
+            valida(element.target);
+        });
     });
-});
+}
+
 sendButton.addEventListener("click", (event) => {
     event.preventDefault();
 
@@ -52,20 +54,20 @@ const mensajesDeError = {
         valueMissing: "El campo nombre no puede estar vacío",
         patternMismatch: "Debe contener máximo 40 caracteres"
     },
-    image:{
+    image: {
         valueMissing: "El campo imagen no puede estar vacío",
     },
-    category:{
+    category: {
         valueMissing: "El campo categoría no puede estar vacío",
     },
-    product:{
+    product: {
         valueMissing: "El campo nombre del producto no puede estar vacío",
         patternMismatch: "Debe contener máximo 20 caracteres"
     },
-    price:{
+    price: {
         valueMissing: "El campo precio del producto no puede estar vacío",
     },
-    description:{
+    description: {
         valueMissing: "El campo descripción no puede estar vacío",
         patternMismatch: "Debe contener máximo 150 caracteres"
     },
@@ -86,7 +88,7 @@ const mensajesDeError = {
 function mostrarMensajeDeError(tipoDeInput, input) {
     let mensaje = "";
     tipoErrores.forEach(error => {
-       
+
         if (input.validity[error]) {
             mensaje = mensajesDeError[tipoDeInput][error];
         }

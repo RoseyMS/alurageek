@@ -27,9 +27,9 @@
         </div>
 
         <div class="header__container__search">
-            <form class="header__search">
-                <input class="header__search__input" type="text" placeholder="¿Que desea buscar?">
-                <button class="header__search__btn">
+            <form action="submit" class="header__search" data-search>
+                <input class="header__search__input" type="text" data-searchinput>
+                <button type="submit" class="header__search__btn">
                     <i class="fa fa-search">
                     </i>
                 </button>
@@ -113,6 +113,7 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="module" src="../js/validaciones.js"></script>
+    <script type="module" src="../controllers/product-controller-search.js"></script>
 </body>
 
 </html>
