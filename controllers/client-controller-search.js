@@ -4,8 +4,6 @@ const form = document.querySelector("[data-login]");
 
 form.addEventListener("submit", (evento) => {
     evento.preventDefault();
-
-
     const inputEmail = document.querySelector("[data-email]").value;
     const inputPassword = document.querySelector("[data-password]").value;
     clientServices.clientsList().then((data) => {
@@ -17,17 +15,15 @@ form.addEventListener("submit", (evento) => {
             }
         });
         if (userFound) {
-            window.location.href = "/screens/index.html";
-            
+        localStorage.setItem("email", inputEmail);
+        window.location.assign(`/screens/index.html`);
         } else {
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
                 text: 'Correo y/o contraseña incorrecta!'
-            })
+            });
         }
     }).catch((error) => console.error("Ocurrio un error", error));
     form.reset();
-
-
 });

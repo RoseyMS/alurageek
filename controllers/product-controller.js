@@ -1,4 +1,7 @@
 import { productServices } from "../service/product-service.js";
+import { userLoggedIn } from "./session-controller.js";
+
+const url = window.location.href;
 
 export const createNewLine = (image, category, name, price, description, id) => {
 
@@ -8,8 +11,7 @@ export const createNewLine = (image, category, name, price, description, id) => 
         <div class = "product__line__products__details">
             <img class="product__line__products__details__product-img" src="${image}" alt="">`;
 
-    const url = window.location.href;
-    if (url.includes("products")) {
+    if (url.includes("products") && userLoggedIn()) {
         content += `<button type = "button" class="product__line__products__details__delete-btn" id= ${id}><i class="fa fa-trash" aria-hidden="true"></i></button>
                 <button class="product__line__products__details__edit-btn"><a href="../screens/edit-product.html?id=${id}"><i class='fas fa-pen'></i></a></button>`;
     }
@@ -35,6 +37,10 @@ export const createNewLine = (image, category, name, price, description, id) => 
     return line;
 };
 const product = document.querySelector("[data-products]");
+const productLineAdd = document.querySelector("[data-addproduct]");
+const allProductsAdminContent = `<h1 class="product__line__all__products__title">Todos los productos</h1>
+    <button class="product__line__all__products__btn"><a href="../screens/add-product.html">Agregar producto</a> </button>`;
+const allProductsClientContent = `<h1 class="product__line__all__products__title">Todos los productos</h1>`;
 const productTypeStarWars = document.querySelector("[data-product1]");
 const productTypeConsola = document.querySelector("[data-product2]");
 const productTypeDiversos = document.querySelector("[data-product3]");
@@ -65,3 +71,11 @@ productServices.productsList().then((data) => {
         }
     });
 }).catch((error) => console.error("Ocurrio un error", error));
+
+if (url.includes("products")) {
+    if (userLoggedIn()) {
+        productLineAdd.innerHTML = allProductsAdminContent;
+    } else {
+        productLineAdd.innerHTML = allProductsClientContent;
+    }
+}

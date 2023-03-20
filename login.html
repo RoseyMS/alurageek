@@ -4,13 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AluraGeek</title>
+    <title>AluraGeek - Login</title>
     <!-- links -->
     <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/section-banner.css">
-    <link rel="stylesheet" href="../css/section-products.css">
+    <link rel="stylesheet" href="../css/login.css">
     <link rel="stylesheet" href="../css/section-info.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -23,17 +22,12 @@
 <body>
     <header class="header__container">
         <div class="header__container__logo">
-            <img class="header__logo" src="../img/Logo.png" alt="Logotipo AluraGeek">
-        </div>
-
-        <div class="header__container__login">
-            <button id="login_btn"><a href="../screens/login.html">Login</a></button>
-            <button id="login_admin_btn"><a href="../screens/login.html">Menú administrador</a></button>
+            <img class="header__logo" src="/img/Logo.png" alt="Logotipo AluraGeek">
         </div>
 
         <div class="header__container__search">
             <form action="submit" class="header__search" data-search>
-                <input class="header__search__input" type="text"  data-searchinput>
+                <input class="header__search__input" type="text" data-searchinput>
                 <button type="submit" class="header__search__btn">
                     <i class="fa fa-search">
                     </i>
@@ -42,48 +36,24 @@
         </div>
     </header>
     <main>
-        <section class="banner__container">
-            <div class="banner__text__container">
-                <h2>Marzo Promocional</h2>
-                <p>Productos seleccionados con 33% de descuento</p>
-                <button class="banner__text__button"><a href="#consolas">Ver consolas </a></button>
-            </div>
-        </section>
+        <section class="login__container">
+            <h2 class="login__title">Iniciar sesión</h2>
+            <form class="login__form" action="submit" data-login>
+                <div class="element-container">
+                    <input class="login__form__email" type="email" placeholder="Correo electrónico" required data-tipo="email" data-email>
+                    <span class="element-message-error"></span>
+                </div>
+                <div class="element-container">
+                    <input class="login__form__password" type="password" placeholder="Contraseña" required data-tipo="password" data-password pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?!.*[ !@#$%^&*_=+-]).{6,12}$">
+                    <span class="element-message-error"></span>
+                </div>
+                <button type="submit" class="login__form__btn">Entrar</button>
+            </form>
 
-        <section class="products__container">
-            <div class="product__line__container">
-                <div class="product__line__header">
-                    <h3 id="star-wars">Star Wars</h3>
-                    <button><a href="../screens/products.html">Ver todo</a><i class="fa fa-arrow-right"></i></button>
-                </div>
-                <div class="product__line__products" data-product1>
-                    
-                </div>
-            </div>
-            <div class="product__line__container">
-                <div class="product__line__header">
-                    <h3 id="consolas">Consolas</h3>
-                    <button><a href="../screens/products.html">Ver todo</a><i class="fa fa-arrow-right"></i></button>
-                </div>
-                <div class="product__line__products" data-product2>
-                   
-                </div>
-            </div>
-            <div class="product__line__container">
-                <div class="product__line__header">
-                    <h3 id="diversos">Diversos</h3>
-                    <button><a href="../screens/products.html">Ver todo</a><i class="fa fa-arrow-right"></i></button>
-                </div>
-                <div class="product__line__products" data-product3>
-                    
-                    
-                </div>
-
-            </div>
         </section>
         <section class="info__container">
             <div class="info__container__left">
-                <img class="info__container__left__img" src="../img/Logo-2.png" alt="">
+                <img class="info__container__left__img" src="/img/Logo-2.png" alt="">
                 <ul class="info__container__left__list">
                     <li class="info__container__left__list__item">
                         <a href="">Quienes somos</a>
@@ -127,9 +97,9 @@
         <p>Desarrollado por Rosey Morera - 2023</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script type="module" src="../js/validaciones.js"></script>
-    <script type="module" src="../controllers/product-controller.js"></script>
-    <script type="module" src="../controllers/product-controller-search.js"></script>
+    <script type="module" src="/js/validaciones.js"></script>
+    <script type="module" src="/controllers/client-controller-search.js"></script>
+    <script type="module" src="/controllers/product-controller-search.js"></script>
 </body>
 
 </html>
