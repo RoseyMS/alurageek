@@ -47,7 +47,6 @@ const productTypeDiversos = document.querySelector("[data-product3]");
 productServices.productsList().then((data) => {
     data.forEach(({ image, category, name, price, description, id }) => {
         const newLine = createNewLine(image, category, name, price, description, id);
-        let tempObject = {image, category, name, price, description, id}
         const url = window.location.href;
         if (url.includes("products")) {
             product.appendChild(newLine);
