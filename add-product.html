@@ -23,7 +23,7 @@
 <body>
     <header class="header__container">
         <div class="header__container__logo">
-            <a href="index.html"><img class="header__logo" src="/img/Logo.png" alt="Logotipo AluraGeek"></a>
+            <a href="index.html"><img class="header__logo" src="img/Logo.png" alt="Logotipo AluraGeek"></a>
         </div>
 
         <div class="header__container__search">
@@ -41,7 +41,7 @@
             <h1 class="new__product__title">Agregar nuevo producto</h1>
             <form class="new__product__form" action="submit" data-form>
                 <div class="element-container" id="newImageContainer">
-                    <img src="/img/preview.png" id="new__product__image__preview" alt="Su imagen aquí" width="100"
+                    <img src="img/preview.png" id="new__product__image__preview" alt="Su imagen aquí" width="100"
                         height="100" />
                     <input class="new__product__image__url" type="file" required data-tipo="image" data-image
                         onchange="document.getElementById('new__product__image__preview').src = window.URL.createObjectURL(this.files[0])">
@@ -80,7 +80,7 @@
         </div>
         <section class="info__container">
             <div class="info__container__left">
-                <img class="info__container__left__img" src="/img/Logo-2.png" alt="">
+                <img class="info__container__left__img" src="img/Logo-2.png" alt="">
                 <ul class="info__container__left__list">
                     <li class="info__container__left__list__item">
                         <a href="">Quienes somos</a>
@@ -124,12 +124,12 @@
         <p>Desarrollado por Rosey Morera - 2023</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script type="module" src="/js/validaciones.js"></script>
+    <script type="module" src="js/validaciones.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"
         integrity="sha512-UNM1njAgOFUa74Z0bADwAq8gbTcqZC8Ej4xPSzpnh0l6KMevwvkBvbldF9uR++qKeJ+MOZHRjV1HZjoRvjDfNQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script type="module" src="/controllers/product-controller-add.js"></script>
-    <script type="module" src="/controllers/product-controller-search.js"></script>
+    <script type="module" src="controllers/product-controller-add.js"></script>
+    <script type="module" src="controllers/product-controller-search.js"></script>
 </body>
 
 </html>

@@ -1,7 +1,7 @@
 import { productServices } from "../service/product-service.js";
 import { userLoggedIn } from "../controllers/session-controller.js";
 
-const url = window.location.href;
+const { href, pathname } = window.location;
 
 export const createNewLine = (image, category, name, price, description, id) => {
 
@@ -11,7 +11,7 @@ export const createNewLine = (image, category, name, price, description, id) => 
         <div class = "product__line__products__details">
             <img class="product__line__products__details__product-img" src="${image}" alt="">`;
 
-    if (url.includes("products") && userLoggedIn()) {
+    if (href.includes("products") && userLoggedIn()) {
         content += `<button type = "button" class="product__line__products__details__delete-btn" id= ${id}><i class="fa fa-trash" aria-hidden="true"></i></button>
                 <button class="product__line__products__details__edit-btn"><a href="/edit-product.html?id=${id}"><i class='fas fa-pen'></i></a></button>`;
     }
@@ -47,11 +47,11 @@ const productTypeDiversos = document.querySelector("[data-product3]");
 productServices.productsList().then((data) => {
     data.forEach(({ image, category, name, price, description, id }) => {
         const newLine = createNewLine(image, category, name, price, description, id);
-        const url = window.location.href;
-        if (url.includes("products")) {
+        
+        if (href.includes("products")) {
             product.appendChild(newLine);
         }
-        if (url.includes("index")) {
+        if (pathname.length === 0 || pathname === "/" || pathname.includes("index")) {
             switch (category) {
                 case "starwars":
                     productTypeStarWars.appendChild(newLine);
@@ -69,7 +69,7 @@ productServices.productsList().then((data) => {
     });
 }).catch((error) => console.error("Ocurrio un error", error));
 
-if (url.includes("products")) {
+if (href.includes("products")) {
     if (userLoggedIn()) {
         productLineAdd.innerHTML = allProductsAdminContent;
     } else {
