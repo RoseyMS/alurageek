@@ -13,14 +13,14 @@ export const createNewLine = (image, category, name, price, description, id) => 
 
     if (href.includes("products") && userLoggedIn()) {
         content += `<button type = "button" class="product__line__products__details__delete-btn" id= ${id}><i class="fa fa-trash" aria-hidden="true"></i></button>
-                <button class="product__line__products__details__edit-btn"><a href="/edit-product.html?id=${id}"><i class='fas fa-pen'></i></a></button>`;
+                <button class="product__line__products__details__edit-btn"><a href="edit-product.html?id=${id}"><i class='fas fa-pen'></i></a></button>`;
     }
 
     content += `
             <label class="product__line__products__details__product__category" id="${category}"></label>
             <h2 class="product__line__products__details__product-name">${name}</h2>
             <h2 class="product__line__products__details__product-price">$${price}</h2>
-            <a class="product__line__products__details__product-btn" href="/product-details.html?id=${id}">Ver producto</a>
+            <a class="product__line__products__details__product-btn" href="product-details.html?id=${id}">Ver producto</a>
         </div>
         `;
     line.innerHTML = content;
@@ -38,7 +38,7 @@ export const createNewLine = (image, category, name, price, description, id) => 
 };
 const product = document.querySelector("[data-products]");
 const productLineAdd = document.querySelector("[data-addproduct]");
-const allProductsAdminContent = `<h1 class="product__line__all__products__title">Todos los productos</h1><button class="product__line__all__products__btn"><a href="/add-product.html">Agregar producto</a> </button>`;
+const allProductsAdminContent = `<h1 class="product__line__all__products__title">Todos los productos</h1><button class="product__line__all__products__btn"><a href="add-product.html">Agregar producto</a> </button>`;
 const allProductsClientContent = `<h1 class="product__line__all__products__title">Todos los productos</h1>`;
 const productTypeStarWars = document.querySelector("[data-product1]");
 const productTypeConsola = document.querySelector("[data-product2]");
