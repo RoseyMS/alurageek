@@ -3,6 +3,7 @@
     flex-direction: column;
     width: 100%;
     padding-bottom: 1rem;
+    background: var(--light-background-color);
 }
 
 .info__container__left {
@@ -13,7 +14,7 @@
 
 
 }
-
+e
 .info__container__left__img {
     width: 40%;
 }
@@ -43,12 +44,13 @@
 .info__container__contact__message {
     margin: 0.5rem 0;
     width: 95%;
+    background: var(--secundary-color);
 }
 
 .info__container__contact__button {
-    background-color: #2A7AE4;
+    background-color: var(--primary-color);
     width: 40%;
-    color: #FFFFFF;
+    color: var(--secundary-color);
     height: 2rem;
     font-size: 14px;
 }
@@ -78,7 +80,7 @@
 }
 
 .element-container--invalid .element-message-error {
-    color: #424242;
+    color: var(--contrast-dark-color);
     display: block;
     
 }

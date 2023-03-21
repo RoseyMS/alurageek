@@ -64,12 +64,22 @@ formulario.addEventListener("submit", (evento) => {
     evento.preventDefault();
     const url = new URL(window.location);
     const id = url.searchParams.get("id");
-    const image = document.querySelector("[data-image]").value;
+    const image = document.querySelector("[data-image]");
+    
     const category = document.querySelector("[data-category]").value;
     const productName = document.querySelector("[data-name]").value;
     const price = document.querySelector("[data-price]").value;
     const description = document.querySelector("[data-description]").value;
-    productServices.editProduct(image, category, productName, price, description).then(() => {
+
+    const fileReader = new FileReader();
+   
+    fileReader.addEventListener("load", (event) => {
+        const imageData = event.target.result;
+        
+    productServices.editProduct(imageData, category, productName, price, description, id).then(() => {
         alert("Edicion completada");
     });
+
+    });
+    fileReader.readAsDataURL(image.files[0]);
 });

@@ -10,9 +10,7 @@ form.addEventListener("submit", (evento) => {
 
     const fileReader = new FileReader();
    
-    
     fileReader.addEventListener("load", (event) => {
-        
         const imageData = event.target.result;
         const category = document.querySelector("[data-category]").value;
         const name = document.querySelector("[data-name]").value;
@@ -24,5 +22,9 @@ form.addEventListener("submit", (evento) => {
     });
     fileReader.readAsDataURL(image.files[0]);
 
-    alert("Producto agregado");
+    Swal.fire({
+        icon: 'success',
+    
+        text: 'Producto agregado existosamente!'
+    })
 });

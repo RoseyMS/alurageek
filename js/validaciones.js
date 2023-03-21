@@ -32,13 +32,18 @@ function valida(element) {
     const tipoDeElement = element.dataset.tipo;
     const esValido = element.validity.valid;
 
-    if (esValido) {
-        element.parentElement.classList.remove("element-container--invalid");
-        element.parentElement.querySelector(".element-message-error").innerHTML = "";
-    } else {
-        element.parentElement.classList.add("element-container--invalid");
-        element.parentElement.querySelector(".element-message-error").innerHTML = mostrarMensajeDeError(tipoDeElement, element);
+    if (element && element.parentElement) {
+        const messageError = element.parentElement.querySelector(".element-message-error");
+        if (!messageError) return;
+        if (esValido) {
+            element.parentElement.classList.remove("element-container--invalid");
+            messageError.innerHTML = "";
+        } else {
+            element.parentElement.classList.add("element-container--invalid");
+            messageError.innerHTML = mostrarMensajeDeError(tipoDeElement, element);
+        }
     }
+
 }
 
 

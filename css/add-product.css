@@ -2,8 +2,6 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-
-
 }
 
 .new__product__title {
@@ -42,12 +40,12 @@
     height: 100%;
 }
 .new__product__image__url {
-    background: #FFFFFF;
+    background: var(--secundary-color);
     margin-top: 1rem;
     width: 95%;
 }
 
 .new__product__add__btn {
-    background: #2A7AE4;
-    color: #FFFFFF;
+    background: var(--primary-color);
+    color: var(--secundary-color);
 }

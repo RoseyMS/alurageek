@@ -1,5 +1,5 @@
 import { productServices } from "../service/product-service.js";
-import { createNewLine } from "./product-controller.js";
+import {createNewLine} from "../controllers/product-controller.js";
 
 
 
@@ -22,12 +22,12 @@ const url = new URL(window.location);
 
 if ( url.href.includes("search-product")) {
     const q = url.searchParams.get("q");
+
     product.innerHTML = "";
     if (!q) {
         product.appendChild(showMessage());
     } else {
         productServices.searchProducts(q).then((data) => {
-            console.log(data);
             if (data != "") {
                 data.forEach(({ image, category, name, price, description, id }) => {
                     const newLine = createNewLine(image, category, name, price, description, id);
@@ -48,7 +48,6 @@ searchForm.addEventListener("submit", (evento) => {
         product.innerHTML = "";
 
         productServices.searchProducts(name).then((data) => {
-            console.log(data);
             if (data != "") {
                 data.forEach(({ image, category, name, price, description, id }) => {
                     const newLine = createNewLine(image, category, name, price, description, id);
@@ -60,7 +59,7 @@ searchForm.addEventListener("submit", (evento) => {
 
         });
     } else {
-        window.location.assign(`/screens/search-product.html?q=${name}`);
+        window.location.assign(`/search-product.html?q=${name}`);
     }
 
 });

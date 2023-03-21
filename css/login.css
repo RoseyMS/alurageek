@@ -6,7 +6,7 @@
     align-items: center;
     padding-top: 4rem;
     padding-bottom: 4rem;
-    background: #F5F5F5;
+    background: var(--light-background-color);
 }
 .login__title{
     margin: 1rem 0;
@@ -27,9 +27,9 @@
     width: 80%;
 }
 .login__form__btn{
-    background: #2A7AE4;
+    background: var(--primary-color);
     width: 40%;
-    color: #FFFFFF;
+    color: var(--secundary-color);
 }
 
 

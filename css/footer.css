@@ -1,7 +1,7 @@
 .footer__container{
     display: flex;
     padding: 1rem 0;
-    background: #FFFFFF;
+    background: var(--secundary-color);
    justify-content: space-around;
    width: 100%;
    

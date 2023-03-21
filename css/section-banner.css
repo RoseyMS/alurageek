@@ -27,9 +27,9 @@
     margin-bottom: 0.5rem;
 }
 .banner__text__button{
-    background-color: #2A7AE4;
+    background-color: var(--primary-color);
     width: 50%;
-    color: #FFFFFF;
+    color: var(--secundary-color);
     height: 2rem;
     font-size: 14px;
 }

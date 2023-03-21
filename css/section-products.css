@@ -1,6 +1,6 @@
 .products__container{
     width: 100%;
-    background: #F5F5F5;
+    background: var(--light-background-color);
     padding-bottom: 2rem;
     
 }
@@ -23,7 +23,7 @@
     font-weight: bold;
 }
 .product__line__header button{
-    color: #2A7AE4;
+    color: var(--primary-color);
     font-weight: bold;
 }
 .product__line__products{
@@ -57,7 +57,7 @@
     
 }
 .product__line__products__details__product-btn{
-    color:  #2A7AE4;
+    color:  var(--primary-color);
     font-weight: 500;
 }
 
@@ -75,7 +75,7 @@
     margin: 2rem 0 1rem 0;
 }
 .product__line__all__products__btn{
-    background: #2A7AE4;
+    background: var(--primary-color);
     color: #FFFFFF;
     width: 40%;
     height: 2rem;

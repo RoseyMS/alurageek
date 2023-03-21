@@ -21,7 +21,7 @@
 }
 
 .product__related {
-    background: #FFFFFF;
+    background: var(--secundary-color);
 }
 
 .product__related__title {
@@ -35,7 +35,6 @@
 @media screen and (min-width:768px) {
     .product__details__container {
         flex-direction: row;
-        justify-content: space-between;
         margin-bottom: 0;
     }
 
