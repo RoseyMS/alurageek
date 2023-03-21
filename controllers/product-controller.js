@@ -51,7 +51,7 @@ productServices.productsList().then((data) => {
         if (href.includes("products")) {
             product.appendChild(newLine);
         }
-        if (pathname.length === 0 || pathname === "/" || pathname.includes("index")) {
+        if (pathname.length === 0 || pathname === "/" || pathname.endsWith("alurageek/") || pathname.includes("index")) {
             switch (category) {
                 case "starwars":
                     productTypeStarWars.appendChild(newLine);
