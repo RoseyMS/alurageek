@@ -3,6 +3,7 @@ const form = document.querySelector("[data-form]");
 
 form.addEventListener("submit", (evento) => {
     evento.preventDefault();
+    const url = new URL(window.location);
     const image = document.querySelector("[data-image]");
     if (!image.files || !image.files[0]) {
         return;
@@ -26,4 +27,5 @@ form.addEventListener("submit", (evento) => {
         icon: 'success',
         text: 'Producto agregado existosamente!'
     })
+    window.location.assign(`${url.href.includes("alurageek") ? "/alurageek" : ""}/products.html`);
 });

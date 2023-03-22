@@ -85,4 +85,5 @@ formulario.addEventListener("submit", (evento) => {
 
     });
     fileReader.readAsDataURL(image.files[0]);
+    window.location.assign(`${url.href.includes("alurageek") ? "/alurageek" : ""}/products.html`);
 });

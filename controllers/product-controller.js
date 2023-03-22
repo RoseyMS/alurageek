@@ -37,6 +37,9 @@ export const createNewLine = (image, category, name, price, description, id) => 
                 confirmButtonText: 'Sí'
             }).then((result) => {
                 if (result.isConfirmed) {
+                    console.log(result.isConfirmed);
+                    productServices.deleteProduct(id).then(respuesta => {
+                    }).catch((error) => console.error("Ocurrio un error"));
                     Swal.fire(
                         'Borrado!',
                         'El producto fue eliminado.',
@@ -44,9 +47,7 @@ export const createNewLine = (image, category, name, price, description, id) => 
                     )
                 }
             })
-            productServices.deleteProduct(id).then(respuesta => {
-                
-            }).catch((error) => console.error("Ocurrio un error"));
+            
         });
     }
 
