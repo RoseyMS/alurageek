@@ -27,5 +27,5 @@ form.addEventListener("submit", (evento) => {
         icon: 'success',
         text: 'Producto agregado existosamente!'
     })
-    window.location.assign(`${url.href.includes("alurageek") ? "/alurageek" : ""}/products.html`);
+    
 });
