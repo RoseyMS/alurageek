@@ -24,7 +24,6 @@ form.addEventListener("submit", (evento) => {
 
     Swal.fire({
         icon: 'success',
-    
         text: 'Producto agregado existosamente!'
     })
 });

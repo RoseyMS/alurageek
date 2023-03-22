@@ -28,8 +28,24 @@ export const createNewLine = (image, category, name, price, description, id) => 
     const btnDelete = line.querySelector(".product__line__products__details__delete-btn");
     if (btnDelete) {
         btnDelete.addEventListener("click", () => {
-            console.log(id);
+            Swal.fire({
+                title: 'Está seguro de que desea eliminar el producto?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire(
+                        'Borrado!',
+                        'El producto fue eliminado.',
+                        'success'
+                    )
+                }
+            })
             productServices.deleteProduct(id).then(respuesta => {
+                
             }).catch((error) => console.error("Ocurrio un error"));
         });
     }
@@ -47,7 +63,7 @@ const productTypeDiversos = document.querySelector("[data-product3]");
 productServices.productsList().then((data) => {
     data.forEach(({ image, category, name, price, description, id }) => {
         const newLine = createNewLine(image, category, name, price, description, id);
-        
+
         if (href.includes("products")) {
             product.appendChild(newLine);
         }
