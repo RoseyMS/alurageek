@@ -41,7 +41,7 @@ const editProduct = (image, category, name,  price, description, id) => {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({ image, category, name,  price, description })
-    }).then(respuesta => respuesta).catch((err) => console.error("ha ocurrido un error"))
+    }).then(respuesta => respuesta).catch((err) => console.error("ha ocurrido un error",err))
 }
 export const productServices = {
     productsList,
