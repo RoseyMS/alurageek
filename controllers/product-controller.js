@@ -45,6 +45,7 @@ export const createNewLine = (image, category, name, price, description, id) => 
                         'El producto fue eliminado.',
                         'success'
                     )
+                    window.location.reload();
                 }
             })
             
