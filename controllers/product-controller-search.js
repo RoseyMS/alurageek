@@ -59,7 +59,7 @@ searchForm.addEventListener("submit", (evento) => {
 
         });
     } else {
-        window.location.assign(`${window.location.includes("alurageek") ? "/alurageek" : ""}/search-product.html?q=${name}`);
+        window.location.assign(`${url.href.includes("alurageek") ? "/alurageek" : ""}/search-product.html?q=${name}`);
     }
 
 });
