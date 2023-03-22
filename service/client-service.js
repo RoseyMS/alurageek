@@ -1,9 +1,9 @@
 
 const clientsList = () =>
-    fetch("http://localhost:3000/client").then((respuesta) => respuesta.json());
+    fetch("https://periwinkle-dhole-wear.cyclic.app/client").then((respuesta) => respuesta.json());
 
 const addClient = (email, password) => {
-    return fetch("http://localhost:3000/client", {
+    return fetch("https://periwinkle-dhole-wear.cyclic.app/client", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -17,18 +17,18 @@ const addClient = (email, password) => {
 }
 
 const deleteClient = (id) => {
-    return fetch(`http://localhost:3000/client/${id}`, {
+    return fetch(`https://periwinkle-dhole-wear.cyclic.app/client/${id}`, {
         method: "DELETE"
     });
 }
 const clientDetails = (id) => {
-    return fetch(`http://localhost:3000/client/${id}`).then(respuesta =>
+    return fetch(`https://periwinkle-dhole-wear.cyclic.app/client/${id}`).then(respuesta =>
         respuesta.json()
     );
 }
 
 const editClient = (email,password, id) => {
-    return fetch(`http://localhost:3000/client/${id}`, {
+    return fetch(`https://periwinkle-dhole-wear.cyclic.app/client/${id}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"

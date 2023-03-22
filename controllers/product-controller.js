@@ -39,14 +39,14 @@ export const createNewLine = (image, category, name, price, description, id) => 
                 if (result.isConfirmed) {
                     console.log(result.isConfirmed);
                     productServices.deleteProduct(id).then(respuesta => {
-                    }).catch((error) => console.error("Ocurrio un error"));
+                    }).catch((error) => console.error("Ocurrio un error", error));
                     Swal.fire(
                         'Borrado!',
                         'El producto fue eliminado.',
                         'success'
-                    )
+                    ).then(() => window.location.reload())
                 }
-            }).then(() => window.location.reload())
+            })/*  */
             
         });
     }

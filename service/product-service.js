@@ -1,8 +1,8 @@
 
 const productsList = () =>
-    fetch("http://localhost:3000/product").then((respuesta) => respuesta.json());
+    fetch("https://periwinkle-dhole-wear.cyclic.app/product").then((respuesta) => respuesta.json());
 const addProduct = (image, category, name,  price, description) => {
-    return fetch("http://localhost:3000/product", {
+    return fetch("https://periwinkle-dhole-wear.cyclic.app/product", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -19,23 +19,23 @@ const addProduct = (image, category, name,  price, description) => {
 }
 
 const deleteProduct = (id) => {
-    return fetch(`http://localhost:3000/product/${id}`, {
+    return fetch(`https://periwinkle-dhole-wear.cyclic.app/product/${id}`, {
         method: "DELETE"
     });
 }
 const productDetails = (id) => {
-    return fetch(`http://localhost:3000/product/${id}`).then(respuesta =>
+    return fetch(`https://periwinkle-dhole-wear.cyclic.app/product/${id}`).then(respuesta =>
         respuesta.json()
     );
 }
 const searchProducts = (name) => {
-    return fetch(`http://localhost:3000/product?q=${name}`).then(respuesta =>
+    return fetch(`https://periwinkle-dhole-wear.cyclic.app/product?q=${name}`).then(respuesta =>
         respuesta.json()
     );
 }
 
 const editProduct = (image, category, name,  price, description, id) => {
-    return fetch(`http://localhost:3000/product/${id}`, {
+    return fetch(`https://periwinkle-dhole-wear.cyclic.app/product/${id}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
