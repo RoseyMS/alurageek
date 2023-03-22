@@ -16,7 +16,7 @@ form.addEventListener("submit", (evento) => {
         });
         if (userFound) {
         localStorage.setItem("email", inputEmail);
-        window.location.assign(`index.html`);
+        window.location.assign(`${window.location.includes("alurageek") ? "/alurageek/" : ""}index.html`);
         } else {
             Swal.fire({
                 icon: 'error',
