@@ -18,14 +18,15 @@ form.addEventListener("submit", (evento) => {
         const price = document.querySelector("[data-price]").value;
         const description = document.querySelector("[data-description]").value;
         productServices.addProduct(imageData, category, name, price, description).then(() => {
+            Swal.fire({
+                icon: 'success',
+                text: 'Producto agregado existosamente!'
+            }).then(() => {
+                window.location.assign(`${window.location.href.includes("alurageek") ? "/alurageek/" : ""}products.html`);
+            });
         }).catch(err => console.error(err));
 
     });
     fileReader.readAsDataURL(image.files[0]);
-
-    Swal.fire({
-        icon: 'success',
-        text: 'Producto agregado existosamente!'
-    })
     
 });

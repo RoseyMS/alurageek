@@ -80,6 +80,8 @@ formulario.addEventListener("submit", (evento) => {
             Swal.fire({
                 icon: 'success',
                 text: 'Edición completada!'
+            }).then(() => {
+                window.location.assign(`${window.location.href.includes("alurageek") ? "/alurageek/" : ""}products.html`);
             });
         });
 

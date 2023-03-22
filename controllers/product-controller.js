@@ -24,7 +24,7 @@ export const createNewLine = (image, category, name, price, description, id) => 
         </div>
         `;
     line.innerHTML = content;
-    line.dataset.id = id;
+    line.dataset.productId = id;
     const btnDelete = line.querySelector(".product__line__products__details__delete-btn");
     if (btnDelete) {
         btnDelete.addEventListener("click", () => {
@@ -39,15 +39,16 @@ export const createNewLine = (image, category, name, price, description, id) => 
                 if (result.isConfirmed) {
                     console.log(result.isConfirmed);
                     productServices.deleteProduct(id).then(respuesta => {
+                        line.remove();
+                        Swal.fire(
+                            'Borrado!',
+                            'El producto fue eliminado.',
+                            'success'
+                        );
                     }).catch((error) => console.error("Ocurrio un error", error));
-                    Swal.fire(
-                        'Borrado!',
-                        'El producto fue eliminado.',
-                        'success'
-                    ).then(() => window.location.reload())
                 }
             })/*  */
-            
+
         });
     }
 
